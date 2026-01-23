@@ -1,13 +1,13 @@
 extends CharacterBody3D
 
-# --- Constants ---
+# Constants
 const GRAVITY: float = -24.8
 const MAX_SPEED: float = 9.0
 const ACCEL: float = 3.5
 const DEACCEL: float = 16.0
 const MAX_SLOPE_ANGLE: float = 40.0
 
-# --- Variables ---
+# Variables
 var dir: Vector3 = Vector3.ZERO
 var mouse_sensitivity: float = 0.05
 
@@ -58,7 +58,6 @@ func process_movement(delta):
 	dir.y = 0
 	dir = dir.normalized()
 
-	# Apply gravity (Godot 4 uses velocity)
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 
