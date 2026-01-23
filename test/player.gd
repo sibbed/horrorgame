@@ -2,9 +2,8 @@ extends CharacterBody3D
 
 # --- Constants ---
 const GRAVITY: float = -24.8
-const MAX_SPEED: float = 20.0
-const JUMP_SPEED: float = 18.0
-const ACCEL: float = 4.5
+const MAX_SPEED: float = 9.0
+const ACCEL: float = 3.5
 const DEACCEL: float = 16.0
 const MAX_SLOPE_ANGLE: float = 40.0
 
