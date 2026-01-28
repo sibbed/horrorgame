@@ -1,6 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://diygwv781k3tm"]
+[gd_scene load_steps=9 format=3 uid="uid://diygwv781k3tm"]
 
 [ext_resource type="Script" uid="uid://c5uimgc8gjq5t" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="AudioStream" uid="uid://cceoxhw33erid" path="res://Assets/media/386929__burghrecords__footsteps-indoor-soft.mp3" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://el5wguxkgu0q" path="res://Assets/media/Heart Beat [SOUND EFFECT] 4.mp3" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://bod5uor5cihng" path="res://Assets/media/torch-turned-on-flashlight-click-457506.mp3" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://dncvklqh50mk7" path="res://Assets/media/eyes.jpg" id="5_sweqy"]
+[ext_resource type="AudioStream" uid="uid://dr2038w4jie0r" path="res://Assets/media/Jumpscare Sound.mp3" id="6_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://cwtvoly1p2nni" path="res://Assets/media/youwin.jpg" id="7_1jxqw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 radius = 0.7
@@ -17,3 +23,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5491545, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.7484555e-07, 0, -1.7484555e-07, 1, 0.07133269, -0.90699625, -0.055891037)
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_onrkg")
+
+[node name="Heartbeat" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_i3pqv")
+volume_db = -35.728
+autoplay = true
+
+[node name="FlashlightClick" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_hqtel")
+
+[node name="JumpscareUI" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="JumpscareUI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sweqy")
+stretch_mode = 6
+
+[node name="JumpscareSound" type="AudioStreamPlayer3D" parent="JumpscareUI"]
+process_mode = 3
+stream = ExtResource("6_2hs0m")
+volume_db = -15.271
+
+[node name="WinUI" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="WinUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_1jxqw")
+stretch_mode = 6

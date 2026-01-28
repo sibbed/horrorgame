@@ -6,3 +6,7 @@ func _ready():
 
 	if monster and player:
 		monster.set_target(player)
+
+
+func _on_win_trigger_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

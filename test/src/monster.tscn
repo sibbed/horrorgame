@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgpvhe3pw3n2i"]
+[gd_scene load_steps=8 format=3 uid="uid://cgpvhe3pw3n2i"]
 
 [ext_resource type="Script" uid="uid://dy5bedlfoyd4y" path="res://src/monster.gd" id="1_5bop3"]
+[ext_resource type="AudioStream" uid="uid://brp3decllnhr1" path="res://Assets/media/Ghost whispering sound effect spirts unexplaind haunted sounds.mp3" id="2_5o1l5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e5s64"]
 
@@ -45,3 +46,8 @@ transform = Transform3D(0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, 0.47127557, 0.594
 mesh = SubResource("SphereMesh_5o1l5")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Whisper" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_5o1l5")
+autoplay = true
+max_distance = 10.0

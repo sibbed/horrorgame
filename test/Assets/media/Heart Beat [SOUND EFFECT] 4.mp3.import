@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://el5wguxkgu0q"
+path="res://.godot/imported/Heart Beat [SOUND EFFECT] 4.mp3-6bcf869969acdc68f4866d5a613e18cf.mp3str"
+
+[deps]
+
+source_file="res://Assets/media/Heart Beat [SOUND EFFECT] 4.mp3"
+dest_files=["res://.godot/imported/Heart Beat [SOUND EFFECT] 4.mp3-6bcf869969acdc68f4866d5a613e18cf.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
