@@ -1,15 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgpvhe3pw3n2i"]
+[gd_scene load_steps=7 format=3 uid="uid://cgpvhe3pw3n2i"]
+
+[ext_resource type="Script" uid="uid://dy5bedlfoyd4y" path="res://src/monster.gd" id="1_5bop3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e5s64"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bop3"]
+transparency = 1
+albedo_color = Color(0.47058824, 0.5411765, 0.69803923, 0.43137255)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5bop3"]
+material = SubResource("StandardMaterial3D_5bop3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5o1l5"]
+albedo_color = Color(1, 0.76577795, 0.72829884, 1)
+emission_enabled = true
+emission = Color(1, 0.7647059, 0.7294118, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_5o1l5"]
+material = SubResource("StandardMaterial3D_5o1l5")
+radius = 3.53
+height = 4.03
 
 [node name="monster" type="CharacterBody3D"]
+script = ExtResource("1_5bop3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0001949, 0)
 shape = SubResource("CapsuleShape3D_e5s64")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0001949, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010678768, 1.0001948, -0.0056817383)
 mesh = SubResource("CapsuleMesh_5bop3")
+
+[node name="Eyes" type="Node3D" parent="MeshInstance3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.06366229, 0.048341036, -0.008183837)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/Eyes"]
+transform = Transform3D(0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, 0.47127557, 0.5945684, 0)
+mesh = SubResource("SphereMesh_5o1l5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D/Eyes"]
+transform = Transform3D(0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, 0.47127557, 0.5945684, -0.40136272)
+mesh = SubResource("SphereMesh_5o1l5")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
