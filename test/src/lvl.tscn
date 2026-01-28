@@ -14,7 +14,7 @@ size = Vector3(11.956726, 2.9536133, 16.459732)
 
 [sub_resource type="Environment" id="Environment_tmtsh"]
 background_mode = 1
-background_color = Color(0.03385323, 0.033853296, 0.033853274, 1)
+background_color = Color(0.08468992, 0.08468994, 0.08468988, 1)
 
 [node name="Lvl" type="Node3D"]
 script = ExtResource("1_tmtsh")
@@ -60,6 +60,10 @@ script = ExtResource("5_tmtsh")
 
 [node name="monster2" parent="." instance=ExtResource("4_kaw2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.408844, 0, 23.614016)
+script = ExtResource("5_tmtsh")
+
+[node name="monster3" parent="." instance=ExtResource("4_kaw2b")]
+transform = Transform3D(0.99819714, 0.060020685, 0, -0.060020685, 0.99819714, 0, 0, 0, 1, -12.297316, 0, -9.975759)
 script = ExtResource("5_tmtsh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
