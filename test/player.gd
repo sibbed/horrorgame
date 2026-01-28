@@ -1,13 +1,9 @@
 extends CharacterBody3D
 
-# Constants
-const GRAVITY: float = -24.8
 const MAX_SPEED: float = 9.0
 const ACCEL: float = 3.5
 const DEACCEL: float = 16.0
-const MAX_SLOPE_ANGLE: float = 40.0
 
-# Variables
 var dir: Vector3 = Vector3.ZERO
 var mouse_sensitivity: float = 0.05
 
@@ -20,11 +16,9 @@ func _ready():
 
 
 func _physics_process(delta):
-	process_input(delta)
 	process_movement(delta)
 
 
-func process_input(delta):
 	dir = Vector3.ZERO
 
 	var input_vector := Vector2.ZERO
@@ -45,7 +39,6 @@ func process_input(delta):
 	dir += -cam_basis.z * input_vector.y
 	dir += cam_basis.x * input_vector.x
 
-	# Mouse capture toggle
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(
 			Input.MOUSE_MODE_VISIBLE
@@ -58,8 +51,6 @@ func process_movement(delta):
 	dir.y = 0
 	dir = dir.normalized()
 
-	if not is_on_floor():
-		velocity.y += GRAVITY * delta
 
 	var hvel = velocity
 	hvel.y = 0
